@@ -19,8 +19,6 @@ namespace OrderProcessing.Core.Services
         }
         public Order CreateOrder(string name, double price, int quantity)
         {
-
-
             if (quantity <= 0)
                 throw new ArgumentException("Order quantity must be greater than 0.");
 
@@ -31,6 +29,7 @@ namespace OrderProcessing.Core.Services
             {
                 Id = Guid.NewGuid(),
                 Name = name,
+                Quantity = quantity,
                 Price = price,
             };
 
